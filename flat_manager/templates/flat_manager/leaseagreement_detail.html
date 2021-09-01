@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block details %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{#{{ leaseagreement }}#}
+
+{{ object.rentier.last_name }}
+{#<br>#}
+{#Zawarta w dniu z  {{ leaseagreement.0.rentier_id.get_first_name_display }}#}
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{{ data }}
+
+<ul style="border-right: 5px solid black;">
+        {% include "add.html" with add=add  %}
+    <a class="navbar-brand" href="{% url 'search' %}"> Szukaj </a>
+    <br>
+     <br>
+        <a class="navbar-brand" style="height: 50%" href="{% url 'lease_agreement_create' %}"> dodaj umowę</a>
+    <br>
+     <br>
+         <a class="navbar-brand" href="{% url 'flat_create' %}"> dodaj mieszkanie</a>
+     <br>
+     <br>
+        <a class="navbar-brand" href="{% url 'rentier_create' %}"> dodaj najemcę</a>
+     <br>
+     <br>
+        <a class="navbar-brand" href="{% url 'owner_create' %}"> dodaj właściciela </a>
+     <br>
+     <br>
+        <a class="navbar-brand" href="{% url 'agent_create' %}"> dodaj agenta nieruchomości</a>
+     <br>
+     <br>
+        <a class="navbar-brand" class="btn btn-primary" href="{% url 'room_create' %}"> dodaj pokój</a>
+
+    <br>
+     <br>
+        <a class="navbar-brand" href="{% url 'lease_agreement_list' %}"> katalog umów</a>
+
+    <br>
+    <br>
+         <a class="navbar-brand" href="{% url 'flat_list' %}"> Lista mieszkań</a>
+    <br>
+    <br>
+         <a  class="navbar-brand"  href="{% url 'rentier_list' %}"> lista najemców</a>
+    <br>
+    <br>
+         <a  class="navbar-brand" href="{% url 'owner_list' %}"> lista właścicieli</a>
+    <br>
+    <br>
+         <a class="navbar-brand"  href="{% url 'agent_list' %}"> lista agentów nieruchomości</a>
+</ul>

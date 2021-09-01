@@ -1,0 +1,14 @@
+{%  extends 'index.html' %}
+{% block list %}
+    <h3> wyszukaj </h3>
+<body>
+ <form  method="GET">
+     {% csrf_token %}
+    {{ flatfilter.form }}
+    <button id="search_submit" type="submit" >Szukaj</button>
+ </form>
+ {% for flat in flats %}
+     <li> Miasto: {{ flat.city }}, ulica {{ flat.street }}, nr. {{ flat.flat_number }}, mieszkania. {{ flat.house_number }}
+     </li>
+    {%  endfor %}
+{%  endblock %}

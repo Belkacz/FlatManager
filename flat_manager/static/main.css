@@ -1,0 +1,9 @@
+/*const left = document.querySelector('.left');*/
+/*const right = document.querySelector('.right');*/
+/*const container = document.querySelector('.container');*/
+
+.center {float:left; margin: 150px 0 0 47%; text-align: center}
+
+.right {float:left; margin: 0 20px 0 90%; }
+
+.leftmenu {background: coral}

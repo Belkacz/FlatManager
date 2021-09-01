@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Umowa Njamu lokalu mieszkaniowego na czas określony</title>
+</head>
+<body>
+ <h1> Umowa Njamu lokalu mieszkaniowego na czas określony </h1>
+<br>
+
+<br>
+Zawarta w dniu {{ leaseagreement.contract_date }} pomiędzy:
+ <br>
+ 1) {{ leaseagreement.rentier.first_name }} {{ leaseagreement.owner.first_name }} {{ leaseagreement.owner.last_name }}
+ identyfikujacym się nr. PESEL {{ leaseagreement.owner.pesel }}, zwanym dalej Wynajmującym.
+<br>a <br>
+2) {{ leaseagreement.rentier.first_name }} {{ leaseagreement.rentier.last_name }} identyfikującym się nr. PESEL
+{{ leaseagreement.rentier.pesel }}, zwanym dalej Najmującym.
+<br>
+ <h3>1.</h3>
+<br>
+ 1. Wynajmujacy oświadcza, ze jest właścicielem lokalu mieszalnego nr. {{ leaseagreement.flat.flat_number }} w budynku
+nr. {{ leaseagreement.flat.house_number }} przy ulicy {{ leaseagreement.flat.street }}, zwangeo dalej lokalem mieszkalnym.
+ <br>
+2. Lokal mieszkalny składa się z  {%  for room in leaseagreement.rooms.all %}
+    {{ forloop.counter }}
+ {% endfor %} pokoi, kuchni i łazienki.
+
+<br>
+3. Powierzchnia użytkowa loklau mieszklnego, o którym mowa wyżej stanowi
+ {%  for flat in leaseagreement.flat.all %}
+   {{ flat.surface }}
+ {% endfor %}
+ <br>
+<h3>2.</h3>
+<br>
+Umowa zostaje zwarta na okres od dnia {{ leaseagreement.contract_date }} do dnia {{ leaseagreement.end_of_contract }}.
+<br>
+<h3>3.</h3>
+<br>
+1. Najmeca bęzie płacił Wynajmującemu czynsz w wysokości {{ leaseagreement.monthly_cost }} zł.
+<br>
+2. Czynsz płany jest z góry do każdego {{ leaseagreement.date_of_payment }} dnia miesiąca.
+<br>
+3. Wraz z zawarciem umowy Najemca zobowiązuje się do uiszczenie jednorazowej prowizji dla biur w wyskości
+ {{ leaseagreement.agent_provision }} zł.
+
+<br>
+<button><a href="{% url 'lease_agreement_list' %}"> wróć </a></button>
+</body>
+</html>

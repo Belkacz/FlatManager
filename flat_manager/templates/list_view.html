@@ -1,0 +1,30 @@
+{%  extends 'index.html' %}
+{% block list %}
+<h3>
+{% if object_list.0.class_name == "leaseagreement" %}
+            Umowy
+    {% elif object_list.0.class_name == "flat" %}
+    Mieszkania
+        {% elif object_list.0.class_name == "rentier" %}
+    Najemcy
+        {% elif object_list.0.class_name == "owner" %}
+    Właściciele
+        {% elif object_list.0.class_name == "agent" %}
+    Agenci nieruchomości
+{% endif %}
+     </h3>
+{#<h3> object_list.owner.get_string_fields </h3>#}
+
+{% for obj in object_list %}
+    <li>
+    {{ obj }}
+            <a href="{{ obj.class_name }}-update/{{ obj.pk }}" class="btn btn-danger rounded-0 text-light m-1">edytuj</a>
+            <a href="{{ obj.class_name }}-delete/{{ obj.pk }}" class="btn btn-danger rounded-0 text-light m-1">Usuń</a>
+        {% if obj.class_name == 'leaseagreement' %}
+            <a href="{{ obj.class_name }}-details/{{ obj.pk }}" class="btn btn-danger rounded-0 text-light m-1">Umowa Najmu</a>
+
+        {%  endif %}
+    </li>
+
+    {% endfor %}
+{% endblock %}
