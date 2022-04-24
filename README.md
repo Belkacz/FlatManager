@@ -3,6 +3,11 @@ FlatManager is basically a type of CRM, on using this program you can add flat, 
 This project also uses frameworks like django bootstrap form to create forms and django filter to create search options.
 Also tests are very important in this project, I created over 40 tests.
 
+#Preview:
+```
+https://belkaflatmanager.herokuapp.com/home/
+```
+
 #How to start
 first u need to install python and clone project by
 ```
