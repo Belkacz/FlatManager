@@ -8,7 +8,7 @@ Also tests are very important in this project, I created over 40 tests.
 https://belkaflatmanager.herokuapp.com/home/
 ```
 
-How to start
+###How to start
 first u need to install python and clone project by
 ```
 git clone https://github.com/Belkacz/FlatManager
